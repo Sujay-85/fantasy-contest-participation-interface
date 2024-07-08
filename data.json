@@ -1,0 +1,254 @@
+{
+  "users": [
+    {
+      "username": "user1",
+      "password": "password1",
+      "name": "User One",
+      "email": "user1@example.com",
+      "mobile": "1234567890",
+      "id": "a1ef"
+    },
+    {
+      "username": "user2",
+      "password": "password2",
+      "name": "User Two",
+      "email": "user2@example.com",
+      "mobile": "9876543210",
+      "id": "0dce"
+    },
+    {
+      "id": "2cf6",
+      "name": "ashfoodibot",
+      "email": "t220256@famt.ac.in",
+      "mobile": "65465",
+      "username": "t220256@famt.ac.in",
+      "password": "86856"
+    },
+    {
+      "id": "a29b",
+      "name": "Ashish Ghadigaonkar",
+      "email": "ashishghadigaonkar85@gmail.com",
+      "mobile": "8010371285",
+      "username": "ashghad",
+      "password": "123"
+    },
+    {
+      "id": "3899",
+      "name": "darshan",
+      "email": "uxyz89543@gmail.com",
+      "mobile": "6546555456",
+      "username": "ashghad",
+      "password": "5"
+    },
+    {
+      "id": "967a",
+      "name": "Ashish Ghadigaonkar",
+      "email": "t22026@famt.ac.in",
+      "mobile": "9010876543",
+      "username": "skajs",
+      "password": "123"
+    },
+    {
+      "id": "a806",
+      "name": "Sujal",
+      "email": "sujal@gmail.com",
+      "mobile": "9186005503",
+      "username": "sujay",
+      "password": "123"
+    },
+    {
+      "id": "a652",
+      "name": "mayur",
+      "email": "mayur@123",
+      "mobile": "9186005501",
+      "username": "MG",
+      "password": "12"
+    },
+    {
+      "id": "dd4f",
+      "name": "Ashish Ghadigaonkar",
+      "email": "shubh@gmail.com",
+      "mobile": "9080607010",
+      "username": "shubu",
+      "password": "shubu@123"
+    },
+    {
+      "id": "5493",
+      "name": "gandhar",
+      "email": "gandhar@gmail.com",
+      "mobile": "9060305030",
+      "username": "gandhar",
+      "password": "gandhar@123"
+    },
+    {
+      "id": "72e7",
+      "name": "ash",
+      "email": "ash@123",
+      "mobile": "5268090605",
+      "username": "526",
+      "password": "Aq1@wedr"
+    },
+    {
+      "id": "7130",
+      "name": "Ashish Ghadigaonkar",
+      "email": "ashishghadigaonr85@gmail.com",
+      "mobile": "8010371287",
+      "username": "ashghadi",
+      "password": "ashish@1"
+    },
+    {
+      "id": "828a",
+      "name": "sahil",
+      "email": "sahilb@8280",
+      "mobile": "7449879898",
+      "username": "Sahilb123",
+      "password": "Sahil@123"
+    }
+  ],
+  "contests": [
+    {
+      "id": "629b",
+      "date": "2024-07-19",
+      "time": "22:04",
+      "name": "Ashish Ghadigaonkar",
+      "entryFee": "paid",
+      "price": ""
+    },
+    {
+      "id": "70c9",
+      "date": "2024-07-20",
+      "time": "01:02",
+      "name": "codehacking",
+      "entryFee": "paid",
+      "price": ""
+    },
+    {
+      "id": "cb96",
+      "date": "2024-07-17",
+      "time": "22:10",
+      "name": "chatbot",
+      "entryFee": "paid",
+      "price": "1007"
+    },
+    {
+      "id": "3e37",
+      "date": "2024-07-24",
+      "time": "22:43",
+      "name": "sdk",
+      "entryFee": "free",
+      "price": ""
+    },
+    {
+      "id": "5186",
+      "date": "2024-07-13",
+      "time": "22:45",
+      "name": "hackme",
+      "entryFee": "free",
+      "price": ""
+    },
+    {
+      "id": "db33",
+      "date": "2024-07-11",
+      "time": "22:45",
+      "name": "project competetion",
+      "entryFee": "free",
+      "price": ""
+    },
+    {
+      "id": "6d60",
+      "date": "2024-07-23",
+      "time": "22:45",
+      "name": "Quiz",
+      "entryFee": "free",
+      "price": ""
+    },
+    {
+      "id": "6846",
+      "date": "2024-07-06",
+      "time": "03:44",
+      "name": "tech",
+      "entryFee": "paid",
+      "price": "500"
+    },
+    {
+      "id": "f7f0",
+      "date": "2024-07-06",
+      "time": "03:44",
+      "name": "techno",
+      "entryFee": "paid",
+      "price": "500"
+    },
+    {
+      "id": "1aa9",
+      "date": "2024-07-04",
+      "time": "11:00",
+      "name": "intern",
+      "entryFee": "paid",
+      "price": "100"
+    },
+    {
+      "id": "f779",
+      "date": "2024-07-03",
+      "time": "11:02",
+      "name": "bot",
+      "entryFee": "free",
+      "price": ""
+    },
+    {
+      "id": "5571",
+      "date": "2024-07-12",
+      "time": "14:03",
+      "name": "ai masterclass",
+      "entryFee": "free",
+      "price": ""
+    },
+    {
+      "id": "d650",
+      "date": "2024-07-12",
+      "time": "14:03",
+      "name": "ML masterclass",
+      "entryFee": "free",
+      "price": ""
+    },
+    {
+      "id": "a36f",
+      "date": "2024-07-12",
+      "time": "14:03",
+      "name": "Ai ML masterclass",
+      "entryFee": "free",
+      "price": ""
+    },
+    {
+      "id": "8ba9",
+      "date": "2024-08-02",
+      "time": "11:08",
+      "name": "project",
+      "entryFee": "paid",
+      "price": "300"
+    },
+    {
+      "id": "9608",
+      "date": "2024-08-02",
+      "time": "11:08",
+      "name": "project distroy",
+      "entryFee": "paid",
+      "price": "300"
+    },
+    {
+      "id": "cc2d",
+      "date": "2024-07-02",
+      "time": "13:48",
+      "name": "breakcode",
+      "entryFee": "paid",
+      "price": "800"
+    },
+    {
+      "id": "4a2d",
+      "date": "2024-07-26",
+      "time": "16:23",
+      "name": "coding competition",
+      "entryFee": "paid",
+      "price": "100"
+    }
+  ]
+}

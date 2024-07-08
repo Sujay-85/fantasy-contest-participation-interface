@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Contests</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(white,skyblue,blue,purple,black);
+            overflow: hidden; /* Prevent body scroll */
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 2000px;
+            background-color: #fff;
+            overflow: auto; /* Allow container to scroll */
+            max-height: calc(100vh - 120px); /* Adjust to leave space for headers and button */
+            margin-top: 20px; /* Add margin top to separate from button */
+            position: relative; /* Ensure relative positioning for absolute elements */
+            background: radial-gradient(white,skyblue,blue,purple,black);
+
+            
+        }
+        h2{
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            position: sticky; /* Sticky headers */
+            top: 0;
+            background-color: #fff; /* Background color for sticky effect */
+            padding: 10px 0;
+            z-index: 2; /* Ensure headers stay above table */
+            background: radial-gradient(white,skyblue,blue,purple,black);
+
+
+        }
+
+        #contests-table thead {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            position: sticky; /* Sticky headers */
+            top: 0;
+            background-color: #fff; /* Background color for sticky effect */
+            padding: 10px 0;
+            z-index: 2; /* Ensure headers stay above table */
+        }
+
+        h2 {
+            z-index: 3; /* Ensure title stays above table headers */
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            position: sticky; /* Sticky headers */
+            top: 58px; /* Height of header + margin */
+            z-index: 1; /* Ensure header stays above table */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        /* Button styles */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 3; /* Ensure button stays above content */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Contest card styles (for the dashboard page) */
+        .contest {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            th, td {
+                font-size: 14px;
+                padding: 10px 12px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="dashboard.html"><button>GO TO DASHBOARD</button></a>
+    <div class="container">
+        <h2>All Contests</h2>
+        <table id="contests-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Name</th>
+                    <th>Free/paid</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Contests will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('http://localhost:3000/contests')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    let contestsTableBody = document.getElementById('contests-table').getElementsByTagName('tbody')[0];
+                    data.forEach(contest => {
+                        let row = contestsTableBody.insertRow();
+                        row.insertCell(0).innerText = contest.date;
+                        row.insertCell(1).innerText = contest.time;
+                        row.insertCell(2).innerText = contest.name;
+                        row.insertCell(3).innerText = contest.entryFee;
+                        row.insertCell(4).innerText = contest.price;
+                    });
+                })
+                .catch(error => console.error('Error fetching contests:', error));
+        });
+    </script>
+</body>
+</html>

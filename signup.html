@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: silver;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(white,skyblue,blue,purple,black);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px;
+            padding: 20px;
+            background-color:purple;
+            border: 1px solid #430446;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(108, 2, 97, 0.1);
+            /*background: rgba(255, 254, 254, 0.25);*/
+            box-shadow: 0 8px 52px 0 rgba(3, 10, 104, 0.37);
+            backdrop-filter: blur(3.5px);
+            -webkit-backdrop-filter: blur(3.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(108, 13, 202, 0.18);
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 8px 52px 0 rgba(249, 119, 5, 0.37);
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        h2{
+            color: goldenrod;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+        }
+
+        a {
+            color: #a2baea;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="password"] {
+                padding: 8px;
+            }
+
+            button {
+                padding: 8px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+            <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+            <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required><br><br>
+            <input type="text" id="username" name="username" placeholder="Username" required><br><br>
+            <div id="username-error" class="error"></div>
+            <input type="password" id="password" name="password" placeholder="Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" title="Password must contain at least 8 characters, including at least one letter, one number, and one special character">
+            <button type="submit">Sign Up</button>
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </form>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>

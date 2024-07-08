@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        /* Add your CSS styling here */
+    </style>
+</head>
+<body>
+    <h2>Forgot Password</h2>
+    <form id="forgotPasswordForm">
+        <label for="username">Enter your username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Send OTP</button>
+    </form>
+
+    <h2>Reset Password</h2>
+    <form id="resetPasswordForm" style="display:none;">
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp" required>
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+        <button type="submit">Reset Password</button>
+    </form>
+
+    <script>
+        document.getElementById('forgotPasswordForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    sendOTP(username);
+});
+
+document.getElementById('resetPasswordForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const otp = document.getElementById('otp').value;
+    const newPassword = document.getElementById('newPassword').value;
+    resetPassword(otp, newPassword);
+});
+
+function sendOTP(username) {
+    fetch('http://localhost:3000/users')
+        .then(response => response.json())
+        .then(users => {
+            const user = users.find(u => u.username === username);
+            if (user) {
+                const otp = Math.floor(100000 + Math.random() * 900000).toString();
+                const otps = getOTPs();
+                otps[user.email] = otp;
+                saveOTPs(otps);
+                alert(`OTP sent to ${user.email}: ${otp}`); // For demonstration; replace with actual email sending logic
+                document.getElementById('forgotPasswordForm').style.display = 'none';
+                document.getElementById('resetPasswordForm').style.display = 'block';
+            } else {
+                alert('Username not found');
+            }
+        })
+        .catch(error => console.error('Error fetching user data:', error));
+}
+
+function resetPassword(otp, newPassword) {
+    const username = document.getElementById('username').value;
+    fetch('http://localhost:3000/users')
+        .then(response => response.json())
+        .then(users => {
+            const user = users.find(u => u.username === username);
+            if (user) {
+                const otps = getOTPs();
+                if (otps[user.email] === otp) {
+                    alert(`Password for ${user.email} has been reset to: ${newPassword}`); // Replace with actual password reset logic
+                    delete otps[user.email];
+                    saveOTPs(otps);
+                } else {
+                    alert('Invalid OTP');
+                }
+            } else {
+                alert('Username not found');
+            }
+        })
+        .catch(error => console.error('Error fetching user data:', error));
+}
+
+function getOTPs() {
+    return JSON.parse(localStorage.getItem('otps') || '{}');
+}
+
+function saveOTPs(otps) {
+    localStorage.setItem('otps', JSON.stringify(otps));
+}
+
+    </script>
+</body>
+</html>
