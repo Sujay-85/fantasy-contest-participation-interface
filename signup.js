@@ -64,7 +64,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
                     console.log('User added successfully:', data);
                     alert('Sign up successful! Please login.');
                     // Redirect to login page or perform other actions
-                    window.location.href = 'login.html';
+                    window.location.href = 'index.html';
                 })
                 .catch(error => console.error('Error adding user:', error));
         })
